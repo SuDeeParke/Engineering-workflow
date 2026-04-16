@@ -8,7 +8,7 @@
       "name": "engineering-workflow",
       "source": {
         "source": "local",
-        "path": "../../output/plugin/engineering-workflow"
+        "path": "./plugins/engineering-workflow"
       },
       "policy": {
         "installation": "AVAILABLE",
