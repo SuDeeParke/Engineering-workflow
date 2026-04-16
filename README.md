@@ -6,33 +6,59 @@ The project is inspired by [addyosmani/agent-skills](https://github.com/addyosma
 
 ## Installation
 
-Use the repository root itself as the local plugin directory, because it already contains `.codex-plugin/plugin.json`, `skills/`, `hooks.json`, and `scripts/`.
+This repository follows the official repo-local marketplace layout for Codex plugins:
+
+```text
+.agents/plugins/marketplace.json
+plugins/engineering-workflow/
+```
+
+Install it by exposing this repository as a local marketplace root.
 
 1. Clone this repository to a local directory.
 2. Make sure `node` is available in your environment, because the plugin hooks call `node`.
-3. Register the plugin directory in your Codex local plugin catalog or marketplace setup, pointing to this repository root.
-4. Verify the local layout:
+3. Ensure your Codex setup loads the marketplace file at `.agents/plugins/marketplace.json`.
+4. The marketplace entry in this repository points to `./plugins/engineering-workflow`, which resolves to `plugins/engineering-workflow` relative to the repository root.
+5. Verify the local layout and plugin hook behavior:
 
 ```bash
 node scripts/validate-plugin-layout.mjs
-node scripts/test-plugin-hooks.mjs
+node plugins/engineering-workflow/scripts/test-plugin-hooks.mjs
 ```
 
-If you maintain a local marketplace file, add an entry whose plugin path resolves to this repository root. The exact marketplace location depends on your Codex setup, but this repository includes `.agents/plugins/marketplace.json` as a reference for the expected metadata shape.
+If you maintain your own local marketplace file outside this repository, add an entry with the same shape:
+
+```json
+{
+  "name": "engineering-workflow",
+  "source": {
+    "source": "local",
+    "path": "./plugins/engineering-workflow"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Productivity"
+}
+```
+
+The relative path is resolved from the marketplace root. In this repository, that root is the repository directory that contains `.agents/plugins/marketplace.json`.
 
 ## Repository layout
 
-- `.codex-plugin/plugin.json` - plugin manifest at the repository root
-- `skills/` - bundled skill definitions quoted from `addyosmani/agent-skills`
-- `hooks.json` - plugin hook registration
-- `scripts/` - hook scripts and local validation helpers
-- `skill-manifest.json` - summary of bundled companion files
 - `.agents/plugins/marketplace.json` - repo-local marketplace registry metadata
+- `plugins/engineering-workflow/.codex-plugin/plugin.json` - plugin manifest
+- `plugins/engineering-workflow/skills/` - bundled skill definitions quoted from `addyosmani/agent-skills`
+- `plugins/engineering-workflow/hooks.json` - plugin hook registration
+- `plugins/engineering-workflow/scripts/` - plugin hook scripts and self-test
+- `plugins/engineering-workflow/skill-manifest.json` - summary of bundled companion files
+- `scripts/validate-plugin-layout.mjs` - repository-level layout validator
 - `docs/plugin-structure-spec.md` - notes for the intended Codex plugin layout
 
 ## Hook behavior
 
-This repository auto-registers two conservative hooks:
+The plugin at `plugins/engineering-workflow` auto-registers two conservative hooks:
 
 - `SessionStart` - injects `skills/using-agent-skills/SKILL.md` at the start of a session
 - `PostToolUse` with `Write|Edit` matcher - prints a verification reminder after file writes or edits
@@ -52,11 +78,11 @@ node scripts/validate-plugin-layout.mjs
 Run the plugin hook self-test from the repository root with:
 
 ```bash
-node scripts/test-plugin-hooks.mjs
+node plugins/engineering-workflow/scripts/test-plugin-hooks.mjs
 ```
 
 ## Notes
 
 - This repository does not modify `~/.codex`, environment variables, or global plugin marketplaces.
 - The `skills/` directory content originates from `https://github.com/addyosmani/agent-skills`.
-- The current repository state may not always include a materialized `plugins/engineering-workflow` directory. Treat `.agents/plugins/marketplace.json` and `docs/plugin-structure-spec.md` as the intended Codex layout reference.
+- The active plugin payload lives under `plugins/engineering-workflow`.
