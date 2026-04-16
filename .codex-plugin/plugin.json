@@ -1,0 +1,34 @@
+{
+  "name": "engineering-workflow",
+  "version": "0.1.0",
+  "description": "Codex-ready rebuild of agent-skills with bundled companion files and cross-platform plugin hooks.",
+  "author": {
+    "name": "sudongpeng",
+    "email": "suxiaopo137@foxmail.com",
+    "url": "https://github.com/addyosmani/agent-skills"
+  },
+  "homepage": "https://github.com/SuDeeParke/Engineering-workflow",
+  "repository": "https://github.com/SuDeeParke/Engineering-workflow",
+  "license": "MIT",
+  "keywords": ["codex", "skills", "workflow", "agent"],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Engineering Workflow",
+    "shortDescription": "Engineering workflow skills rebuilt for Codex.",
+    "longDescription": "A local Codex plugin that packages rebuilt engineering workflow skills, their companion files, and a session-start hook that loads the skill discovery workflow.",
+    "developerName": "Local Workspace Build",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/SuDeeParke/Engineering-workflow",
+    "privacyPolicyURL": "https://openai.com/policies/row-privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/row-terms-of-use/",
+    "defaultPrompt": [
+      "Start with the right engineering skill for this task",
+      "Use spec, plan, build, verify, and review skills in sequence",
+      "Load the matching skill before implementing changes"
+    ],
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}

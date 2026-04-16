@@ -1,0 +1,258 @@
+{
+  "api-and-interface-design": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "browser-testing-with-devtools": {
+    "agents": [],
+    "commands": [
+      "test.md"
+    ],
+    "docs": [
+      "gemini-cli-setup.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "ci-cd-and-automation": {
+    "agents": [],
+    "commands": [],
+    "docs": [
+      "getting-started.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "code-review-and-quality": {
+    "agents": [
+      "code-reviewer.md"
+    ],
+    "commands": [
+      "code-simplify.md",
+      "review.md"
+    ],
+    "docs": [
+      "copilot-setup.md",
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md",
+      "opencode-setup.md",
+      "windsurf-setup.md"
+    ],
+    "hooks": [],
+    "references": [
+      "performance-checklist.md",
+      "security-checklist.md"
+    ]
+  },
+  "code-simplification": {
+    "agents": [],
+    "commands": [
+      "code-simplify.md"
+    ],
+    "docs": [],
+    "hooks": [
+      "simplify-ignore-test.sh",
+      "SIMPLIFY-IGNORE.md",
+      "simplify-ignore.sh"
+    ],
+    "references": []
+  },
+  "context-engineering": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "debugging-and-error-recovery": {
+    "agents": [],
+    "commands": [
+      "build.md"
+    ],
+    "docs": [
+      "getting-started.md",
+      "opencode-setup.md",
+      "skill-anatomy.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "deprecation-and-migration": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "documentation-and-adrs": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "frontend-ui-engineering": {
+    "agents": [],
+    "commands": [],
+    "docs": [
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md"
+    ],
+    "hooks": [],
+    "references": [
+      "accessibility-checklist.md"
+    ]
+  },
+  "git-workflow-and-versioning": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "idea-refine": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "incremental-implementation": {
+    "agents": [],
+    "commands": [
+      "build.md"
+    ],
+    "docs": [
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md",
+      "opencode-setup.md",
+      "windsurf-setup.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "performance-optimization": {
+    "agents": [],
+    "commands": [
+      "review.md"
+    ],
+    "docs": [
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md"
+    ],
+    "hooks": [],
+    "references": [
+      "performance-checklist.md"
+    ]
+  },
+  "planning-and-task-breakdown": {
+    "agents": [],
+    "commands": [
+      "plan.md"
+    ],
+    "docs": [
+      "getting-started.md",
+      "opencode-setup.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "security-and-hardening": {
+    "agents": [
+      "security-auditor.md"
+    ],
+    "commands": [
+      "review.md"
+    ],
+    "docs": [
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md",
+      "windsurf-setup.md"
+    ],
+    "hooks": [],
+    "references": [
+      "security-checklist.md"
+    ]
+  },
+  "shipping-and-launch": {
+    "agents": [],
+    "commands": [
+      "ship.md"
+    ],
+    "docs": [
+      "getting-started.md",
+      "opencode-setup.md"
+    ],
+    "hooks": [],
+    "references": [
+      "accessibility-checklist.md",
+      "performance-checklist.md",
+      "security-checklist.md"
+    ]
+  },
+  "source-driven-development": {
+    "agents": [],
+    "commands": [],
+    "docs": [],
+    "hooks": [],
+    "references": []
+  },
+  "spec-driven-development": {
+    "agents": [],
+    "commands": [
+      "spec.md"
+    ],
+    "docs": [
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md",
+      "opencode-setup.md"
+    ],
+    "hooks": [],
+    "references": []
+  },
+  "test-driven-development": {
+    "agents": [
+      "test-engineer.md"
+    ],
+    "commands": [
+      "build.md",
+      "test.md"
+    ],
+    "docs": [
+      "copilot-setup.md",
+      "cursor-setup.md",
+      "gemini-cli-setup.md",
+      "getting-started.md",
+      "opencode-setup.md",
+      "skill-anatomy.md",
+      "windsurf-setup.md"
+    ],
+    "hooks": [],
+    "references": [
+      "testing-patterns.md"
+    ]
+  },
+  "using-agent-skills": {
+    "agents": [],
+    "commands": [],
+    "docs": [
+      "getting-started.md",
+      "opencode-setup.md",
+      "skill-anatomy.md"
+    ],
+    "hooks": [
+      "hooks.json",
+      "session-start.sh"
+    ],
+    "references": []
+  }
+}
