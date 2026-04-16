@@ -1,20 +1,22 @@
 # Engineering Workflow Plugin
 
-This repository contains a repo-local Codex plugin laid out in the standard marketplace shape. The installable plugin root lives at `plugins/engineering-workflow`, while the repository root keeps the source workspace used to build and validate that plugin copy.
+This repository packages an engineering workflow plugin for Codex and related agent runtimes.
+
+The project is inspired by [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills). The bundled `skills/` content in this repository is fully sourced from that upstream project, with this repository focusing on Codex-oriented packaging, hook wiring, and repository-level validation.
 
 ## Repository layout
 
-- `.agents/plugins/marketplace.json` - repo-local marketplace registry
-- `plugins/engineering-workflow/.codex-plugin/plugin.json` - plugin manifest used by Codex
-- `plugins/engineering-workflow/hooks.json` - plugin hook registration
-- `plugins/engineering-workflow/scripts/` - cross-platform hook scripts and self-test
-- `plugins/engineering-workflow/skills/` - bundled Codex-compatible skill directories
-- `plugins/engineering-workflow/skill-manifest.json` - summary of bundled companion files
-- `scripts/validate-plugin-layout.mjs` - repository layout validator for marketplace and plugin paths
+- `.codex-plugin/plugin.json` - plugin manifest at the repository root
+- `skills/` - bundled skill definitions quoted from `addyosmani/agent-skills`
+- `hooks.json` - plugin hook registration
+- `scripts/` - hook scripts and local validation helpers
+- `skill-manifest.json` - summary of bundled companion files
+- `.agents/plugins/marketplace.json` - repo-local marketplace registry metadata
+- `docs/plugin-structure-spec.md` - notes for the intended Codex plugin layout
 
 ## Hook behavior
 
-The repo-local plugin copy auto-registers two conservative hooks:
+This repository auto-registers two conservative hooks:
 
 - `SessionStart` - injects `skills/using-agent-skills/SKILL.md` at the start of a session
 - `PostToolUse` with `Write|Edit` matcher - prints a verification reminder after file writes or edits
@@ -34,11 +36,11 @@ node scripts/validate-plugin-layout.mjs
 Run the plugin hook self-test from the repository root with:
 
 ```bash
-node plugins/engineering-workflow/scripts/test-plugin-hooks.mjs
+node scripts/test-plugin-hooks.mjs
 ```
 
 ## Notes
 
 - This repository does not modify `~/.codex`, environment variables, or global plugin marketplaces.
-- The repo-local marketplace entry points at `./plugins/engineering-workflow`.
-- If you want to install it elsewhere later, copy `plugins/engineering-workflow` into the destination plugin catalog and update the corresponding marketplace entry.
+- The `skills/` directory content originates from `https://github.com/addyosmani/agent-skills`.
+- The current repository state may not always include a materialized `plugins/engineering-workflow` directory. Treat `.agents/plugins/marketplace.json` and `docs/plugin-structure-spec.md` as the intended Codex layout reference.
