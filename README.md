@@ -4,6 +4,22 @@ This repository packages an engineering workflow plugin for Codex and related ag
 
 The project is inspired by [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills). The bundled `skills/` content in this repository is fully sourced from that upstream project, with this repository focusing on Codex-oriented packaging, hook wiring, and repository-level validation.
 
+## Installation
+
+Use the repository root itself as the local plugin directory, because it already contains `.codex-plugin/plugin.json`, `skills/`, `hooks.json`, and `scripts/`.
+
+1. Clone this repository to a local directory.
+2. Make sure `node` is available in your environment, because the plugin hooks call `node`.
+3. Register the plugin directory in your Codex local plugin catalog or marketplace setup, pointing to this repository root.
+4. Verify the local layout:
+
+```bash
+node scripts/validate-plugin-layout.mjs
+node scripts/test-plugin-hooks.mjs
+```
+
+If you maintain a local marketplace file, add an entry whose plugin path resolves to this repository root. The exact marketplace location depends on your Codex setup, but this repository includes `.agents/plugins/marketplace.json` as a reference for the expected metadata shape.
+
 ## Repository layout
 
 - `.codex-plugin/plugin.json` - plugin manifest at the repository root
