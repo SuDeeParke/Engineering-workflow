@@ -1,7 +1,7 @@
 {
-  "name": "local-engineering-workflow-marketplace",
+  "name": "sudongpeng-provider",
   "interface": {
-    "displayName": "Local Engineering Workflow Marketplace"
+    "displayName": "sudongpeng"
   },
   "plugins": [
     {
@@ -9,6 +9,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/engineering-workflow"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+	{
+      "name": "engineering-livecycle",
+      "source": {
+        "source": "local",
+        "path": "./plugins/engineering-livecycle"
       },
       "policy": {
         "installation": "AVAILABLE",

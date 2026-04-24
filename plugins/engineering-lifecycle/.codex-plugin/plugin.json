@@ -1,0 +1,44 @@
+{
+  "name": "engineering-lifecycle",
+  "version": "0.1.0",
+  "description": "Codex-ready engineering lifecycle plugin rebuilt from raw agent workflow materials.",
+  "author": {
+    "name": "sudongpeng",
+    "email": "suxiaopo137@foxmail.com",
+    "url": "https://github.com/addyosmani/agent-skills"
+  },
+  "homepage": "https://github.com/SuDeeParke/Engineering-workflow",
+  "repository": "https://github.com/SuDeeParke/Engineering-workflow",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "plugin",
+    "skills",
+    "engineering",
+    "lifecycle"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Engineering Lifecycle",
+    "shortDescription": "Engineering lifecycle skills packaged for Codex.",
+    "longDescription": "A local Codex plugin that bundles rebuilt engineering lifecycle skills with companion agents, commands, docs, hooks, and references from raw materials.",
+    "developerName": "Local Workspace Build",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/SuDeeParke/Engineering-workflow",
+    "privacyPolicyURL": "https://openai.com/policies/row-privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/row-terms-of-use/",
+    "defaultPrompt": [
+      "Start with the right engineering lifecycle skill for this task",
+      "Use define, plan, build, verify, review, and ship in sequence",
+      "Load the matching skill before implementing changes"
+    ],
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}
